@@ -1,15 +1,15 @@
-The ``4-print_square`` module
-===============================
+==================================
+The ``4-print_square.txt`` module
+==================================
 
-Using ``matrix_divided``
-------------------------
+Using ``print_square``
+-----------------------
 
-This is an example text file in reStructuredText format.  First import
-``matrix_divided`` from the ``4-print_square`` module:
+Import the function:
 
     >>> print_square = __import__('4-print_square').print_square
 
-Now use it:
+Now test it:
 
     >>> print_square(4)
     ####
@@ -17,45 +17,37 @@ Now use it:
     ####
     ####
 
-Test size zero squares:    
-    >>> print_square(0)
-    
-Test size one square:
-    >>> print_square(1)
-    #
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
 
-Test size negative:
-    >>> print_square(-9)
+    >>> print_square(0)
+
+
+    >>> print_square("Hello")
     Traceback (most recent call last):
-        ...
+    TypeError: size must be an integer
+
+    >>> print_square(5.7)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(-2)
+    Traceback (most recent call last):
     ValueError: size must be >= 0
 
-Test size is not int:
-    >>> print_square(3.6)
+    >>> print_square(-3.0)
     Traceback (most recent call last):
-        ...
     TypeError: size must be an integer
 
-Test size is nan:
-    >>> print_square(float('nan'))
-    Traceback (most recent call last):
-        ...
-    TypeError: size must be an integer
-
-Test size is inf:
-    >>> print_square(float('inf'))
-    Traceback (most recent call last):
-        ...
-    TypeError: size must be an integer
-
-Test Missing argument:
     >>> print_square()
     Traceback (most recent call last):
-        ...
     TypeError: print_square() missing 1 required positional argument: 'size'
-
-Test size is str:
-    >>> print_square('four')
-    Traceback (most recent call last):
-        ...
-    TypeError: size must be an integer
